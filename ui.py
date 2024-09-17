@@ -20,7 +20,8 @@ if uploaded_file is not None:
     if st.button('Analyze Sentiment'):
         # Send the file to the FastAPI backend
         files = {'file': uploaded_file.getvalue()}
-        response = requests.post("sentiback-production.up.railway.app/analyze", files={"file": uploaded_file})
+        response = requests.post("https://sentiback-production.up.railway.app/analyze", files={"file": uploaded_file})
+
         
         # Check if the request was successful
         if response.status_code == 200:
